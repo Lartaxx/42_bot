@@ -1,3 +1,21 @@
 {
-  "DISCORD_TOKEN": "OTkyMDEwODAyOTcyMzQwMjg1.GVvq84.1kDlAwfhICQMXGBtRym1EXMFC2ePfXtkxJjpLk"
+  "DISCORD_TOKEN": "OTkyMDEwODAyOTcyMzQwMjg1.Gm7akD.fk2V2EBG-hA0swaxzxuSolrNchFqUm69ZEg7B8",
+
+  "roles": {
+    "commons": {
+      "student": "991823424009810030",
+      "piscines": "991823621708316782"
+    },
+    "mods": {
+      "admin": "991823318674051095"
+    }
+  },
+
+  "emojis": {
+    "hello": "<a:hello:992113867977130115>"
+  },
+
+  "channels": {
+    "hello": "992112251190378628"
+  }
 }

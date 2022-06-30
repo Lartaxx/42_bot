@@ -10,6 +10,7 @@ module.exports = class ReadyEvent extends Event {
   }
 
   execute() {
-    console.log(`${this.client.user.tag} is logged in`)
+    console.log(`${this.client.user.tag} is logged in`);
+    this.client.user.setActivity("résoudre des problèmes :-)", {type: "PLAYING"});
   }
 };

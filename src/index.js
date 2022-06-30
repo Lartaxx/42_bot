@@ -2,6 +2,7 @@ const { ShewenyClient } = require("sheweny");
 const config = require("../config.json");
 
 const client = new ShewenyClient({
+  config,
   intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"],
   partials: ["GUILD_MEMBER"],
   managers: {
