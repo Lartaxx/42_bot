@@ -1,7 +1,10 @@
 const { ShewenyClient } = require("sheweny");
 const config = require("../config.json");
-
+const { ModalBuilder, TextInputBuilder, ActionRowBuilder} = require("discord.js");
 const client = new ShewenyClient({
+  ModalBuilder,
+  TextInputBuilder, 
+  ActionRowBuilder,
   config,
   intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"],
   partials: ["GUILD_MEMBER"],
@@ -23,6 +26,9 @@ const client = new ShewenyClient({
     inhibitors: {
       directory: "./inhibitors",
     },
+    modals: {
+      directory: "./interactions/modals",
+    }
   },
   mode : "development", // Change to production for production bot
 });

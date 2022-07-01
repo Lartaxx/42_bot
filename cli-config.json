@@ -6,6 +6,7 @@
     "events": "src/events",
     "inhibitors": "src/inhibitors",
     "buttons": "src/interactions/buttons",
-    "selectMenus": "src/interactions/selectmenus"
+    "selectMenus": "src/interactions/selectmenus",
+    "modals": "src/interactions/modals"
   }
 }
