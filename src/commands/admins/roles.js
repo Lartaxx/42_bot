@@ -18,7 +18,8 @@ module.exports = class rolesCommand extends Command {
 
   async execute(interaction) {
     const roles = [];
-    this.config.roles.commons.forEach(role => {
+    const rolesConfig = this.config.roles.commons.filter(role => role.name !== "Student");
+    rolesConfig.forEach(role => {
       roles.push({
         label: role.name, 
         description: role.description, 
