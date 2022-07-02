@@ -1,52 +1,42 @@
 const { Command } = require("sheweny");
-const { ModalBuilder, TextInputBuilder, ActionRowBuilder} = require("discord.js");
 
 module.exports = class annoncesCommand extends Command {
   constructor(client) {
     super(client, {
         name: "annonces",
-        description: "Default description",
-        type: "MESSAGE_COMMAND",
+        description: "Permet aux administrateurs de créer une annonce :-)",
+        type: "SLASH_COMMAND",
         category: "Other",
         userPermissions: ["ADMINISTRATOR"],
         channel: "GUILD",
       });
-      this.row = client.options.ActionRowBuilder;
-      this.modal = client.options.ModalBuilder;
-      this.text = client.options.TextInputBuilder;
+      this.row = client.options.MessageActionRow;
+      this.modal = client.options.Modal;
+      this.text = client.options.TextInputComponent;
   }
 
   async execute(interaction) {
-    console.log(ModalBuilder)
-    const modal = new ModalBuilder()
+    console.log(interaction);
+    const modal = new this.modal()
       .setTitle("Création d'une annonce")
       .setCustomId("annonces_create");
     // Create text input fields
-    const name = new TextInputBuilder()
+    const name = new this.text()
       .setCustomId("name")
-      .setLabel("Nom")
-      .setPlaceholder("Nom")
-      .setStyle(TextInputStyle.Short);
-    const color = new TextInputBuilder()
-      .setCustomId("color")
-      .setLabel("Couleur")
-      .setPlaceholder("Ex: #FFFFFF")
-      .setStyle(TextInputStyle.Short);
-
-    const content = new TextInputBuilder()
+      .setLabel("Titre de l'annonce")
+      .setPlaceholder("Exemple : Création d'un tout nouveau discord !")
+      .setStyle("SHORT");
+    const content = new this.text()
       .setCustomId("content")
-      .setLabel("Contenu")
-      .setStyle(TextInputStyle.Paragraph);
-    const footer = new TextInputBuilder()
-      .setCustomId("footer")
-      .setLabel("Footer")
-      .setStyle(TextInputStyle.Short);
+      .setLabel("Contenu de l'annonce")
+      .setPlaceholder("Exemple : Voici ce tout nouveau discord !")
+      .setStyle("PARAGRAPH");
+
     const rows = [];
-    for (const component of [name, color, content, footer]) {
-      rows.push(new ActionRowBuilder().addComponents([component]));
+    for (const component of [name,content]) {
+      rows.push(new this.row().addComponents([component]));
     }
     modal.addComponents(rows);
     await interaction.showModal(modal);
-      await interaction.showModal(modal);
   }
 };

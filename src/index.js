@@ -1,10 +1,11 @@
 const { ShewenyClient } = require("sheweny");
 const config = require("../config.json");
-const { ModalBuilder, TextInputBuilder, ActionRowBuilder} = require("discord.js");
+const { Modal, TextInputComponent , MessageActionRow, MessageEmbed } = require("discord.js");
 const client = new ShewenyClient({
-  ModalBuilder,
-  TextInputBuilder, 
-  ActionRowBuilder,
+  Modal,
+  TextInputComponent , 
+  MessageActionRow,
+  MessageEmbed,
   config,
   intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"],
   partials: ["GUILD_MEMBER"],

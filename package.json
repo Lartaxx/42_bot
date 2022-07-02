@@ -8,7 +8,7 @@
     "dev": "nodemon ./src/index.js"
   },
   "dependencies": {
-    "discord.js": "^13.0.0",
+    "discord.js": "^13.8.1",
     "sheweny": "^3.5.0"
   },
   "devDependencies": {

@@ -4,25 +4,31 @@ module.exports = class clearCommand extends Command {
   constructor(client) {
     super(client, {
         name: "clear",
-        description: "Default description",
-        type: "MESSAGE_COMMAND",
+        description: "Permet aux administrateurs de clear des messages :-)",
+        type: "SLASH_COMMAND",
         category: "Other",
         channel: "GUILD",
         userPermissions: ["MANAGE_MESSAGES"],
-        args: [
+        options: [
           {
             name: "number_delete",
+            description: "Le nombre de messages à supprimer?",
             type: "STRING",
-            default: "1"
+            required: true
           }
         ]
       }
     );
   }
 
-  async execute(message, args) {
-    const { number_delete } = args;
-    message.channel.bulkDelete(parseInt((number_delete)))
-    .then(messages => message.channel.send(`Nombre de messages supprimés : ${messages.size}`)).then(msg => msg.delete({timeout: 5000}))
-    .catch(console.error);  }
+  async execute(interaction) {
+    const number_delete = interaction.options.getString("number_delete", true);
+    interaction.channel.bulkDelete(parseInt((number_delete)))
+    .then(msg => {
+      return interaction.reply({content: `${msg.size} message(s) supprimé(s) !`, ephemeral: true})
+    })
+    .catch(err => {
+      return interaction.reply({content: `Erreur : \`${err}\``, ephemeral: true});
+    })
+  }
 };
