@@ -7,7 +7,7 @@ module.exports = class annoncesCommand extends Command {
         description: "Permet aux administrateurs de créer une annonce :-)",
         type: "SLASH_COMMAND",
         category: "Other",
-        userPermissions: ["ADMINISTRATOR"],
+        adminsOnly: true,
         channel: "GUILD",
       });
       this.row = client.options.MessageActionRow;
@@ -16,7 +16,6 @@ module.exports = class annoncesCommand extends Command {
   }
 
   async execute(interaction) {
-    console.log(interaction);
     const modal = new this.modal()
       .setTitle("Création d'une annonce")
       .setCustomId("annonces_create");

@@ -1,13 +1,15 @@
 const { ShewenyClient } = require("sheweny");
 const config = require("../config.json");
-const { Modal, TextInputComponent , MessageActionRow, MessageEmbed } = require("discord.js");
+const { Modal, TextInputComponent , MessageActionRow, MessageEmbed, MessageSelectMenu  } = require("discord.js");
 const client = new ShewenyClient({
   Modal,
   TextInputComponent , 
   MessageActionRow,
+  MessageSelectMenu,
   MessageEmbed,
   config,
   intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"],
+  admins: ["332514331516207105"],
   partials: ["GUILD_MEMBER"],
   managers: {
     commands: {

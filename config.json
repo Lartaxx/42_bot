@@ -2,21 +2,40 @@
   "DISCORD_TOKEN": "OTkyMDEwODAyOTcyMzQwMjg1.Gm7akD.fk2V2EBG-hA0swaxzxuSolrNchFqUm69ZEg7B8",
 
   "roles": {
-    "commons": {
-      "student": "991823424009810030",
-      "piscines": "991823621708316782"
-    },
+    "commons":[
+      {
+        "name": "Student",
+        "description": "Étudiant de l'école 42Perpignan",
+        "emoji": "🧑‍🎓",
+        "id": "991823424009810030"
+      },
+      {
+        "name": "Informations - Piscines",
+        "description": "Informations sur les piscines de l'école 42Perpignan",
+        "emoji": "<:piscine:992794687763124275>",
+        "id": "992795021973667860"
+      },
+      {
+        "name": "Informations - École",
+        "description": "Informations sur l'école 42Perpignan",
+        "emoji": "<:42:992793947090993152>",
+        "id": "992795094690320534"
+      }
+    ],
     "mods": {
       "admin": "991823318674051095"
     }
   },
 
   "emojis": {
-    "hello": "<a:hello:992113867977130115>"
+    "hello": "<a:hello:992113867977130115>",
+    "school": "<:42:992793947090993152>",
+    "piscine": "<:piscine:992794687763124275>"
   },
 
   "channels": {
     "hello": "992112251190378628",
-    "annonces": "992015195243282462"
+    "annonces": "992015195243282462",
+    "roles": "992792947760316526"
   }
 }

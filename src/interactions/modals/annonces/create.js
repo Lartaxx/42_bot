@@ -18,6 +18,6 @@ module.exports = class ModalAnnonce extends Modal {
       .setDescription(content)
       .setTimestamp();
 
-      return modal.guild.channels.cache.get(this.config.channels.annonces).send({embeds: [annoncesEmbed]});
+      return modal.guild.channels.cache.get(this.config.channels.annonces).send({content: "@everyone", embeds: [annoncesEmbed]});
   }
 };

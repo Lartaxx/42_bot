@@ -11,7 +11,7 @@ module.exports = class guildMemberAddEvent extends Event {
 
   execute(member) {
     const config = this.config;
-    member.roles.add(config.roles.commons.student);
+    member.roles.add(config.roles.commons.find(role => role.name === "Student")?.id);
     return member.guild.channels.cache.get(config.channels.hello).send(`${config.emojis.hello} souhaitons la bienvenue à ${member} !`);
   }
 };
