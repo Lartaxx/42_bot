@@ -14,7 +14,7 @@ module.exports = class ModalAnnonce extends Modal {
     
     const annoncesEmbed = new this.embed()
       .setColor("#DFE20D")
-      .setTitle(`Nouvelle annonce : **${title}**`)
+      .setTitle(`\`📢\` • Nouvelle annonce : **${title}**`)
       .setDescription(content)
       .setTimestamp();
 

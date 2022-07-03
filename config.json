@@ -13,13 +13,22 @@
         "name": "Informations - Piscines",
         "description": "Informations sur les piscines de l'école 42Perpignan",
         "emoji": "<:piscine:992794687763124275>",
+        "role": "piscine",
         "id": "992795021973667860"
       },
       {
         "name": "Informations - École",
         "description": "Informations sur l'école 42Perpignan",
         "emoji": "<:42:992793947090993152>",
+        "role": "ecole",
         "id": "992795094690320534"
+      },
+      {
+        "name": "Informations - Discord",
+        "description": "Informations sur le discord de l'école 42Perpignan",
+        "emoji": "<:discord:993175959178055700>",
+        "role": "discord",
+        "id": "993175589676662814"
       }
     ],
     "mods": {
@@ -34,6 +43,20 @@
   },
 
   "channels": {
+    "specials":[
+      {
+        "name": "ecole",
+        "id": "992015116679794738"
+      },
+      {
+        "name": "piscine",
+        "id": "992015097398558760"
+      },
+      {
+        "name": "discord",
+        "id": "993174868432527380"
+      }
+    ],
     "hello": "992112251190378628",
     "annonces": "992015195243282462",
     "roles": "992792947760316526"
